@@ -4,6 +4,8 @@
     <list default="true" id="91c8902a-c790-47e8-b809-23991873cac4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sever.js" beforeDir="false" afterPath="$PROJECT_DIR$/sever.js" afterDir="false" />
     </list>
@@ -64,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580559284282</updated>
-      <workItem from="1580559313699" duration="6402000" />
+      <workItem from="1580559313699" duration="11009000" />
     </task>
     <servers />
   </component>
