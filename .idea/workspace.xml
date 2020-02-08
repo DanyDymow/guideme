@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="91c8902a-c790-47e8-b809-23991873cac4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sever.js" beforeDir="false" afterPath="$PROJECT_DIR$/sever.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +21,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1XCo9IGyLP4VXNxJNXg6UNx3R2y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -33,7 +40,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -64,7 +71,8 @@
       <updated>1580559284282</updated>
       <workItem from="1580559313699" duration="11936000" />
       <workItem from="1580647352467" duration="849000" />
-      <workItem from="1580656055887" duration="1944000" />
+      <workItem from="1580656055887" duration="4636000" />
+      <workItem from="1581168830422" duration="909000" />
     </task>
     <servers />
   </component>
@@ -80,9 +88,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="568" y="350" width="440" height="477" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1580560380540" />
-    <state x="14" y="178" key="SettingsEditor" timestamp="1580560384087">
+    <state x="14" y="178" key="SettingsEditor" timestamp="1580671242378">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="14" y="178" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1580560384087" />
+    <state x="14" y="178" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1580671242378" />
   </component>
 </project>
