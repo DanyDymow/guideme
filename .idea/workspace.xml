@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c8902a-c790-47e8-b809-23991873cac4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/guideme.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/guideme.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,7 @@
     <property name="last_opened_file_path" value="G:/фильмы/mern-stack-front-to-back/04 Profile API Routes/021 devconnector-S4" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,7 +74,12 @@
       <workItem from="1580647352467" duration="849000" />
       <workItem from="1580656055887" duration="4636000" />
       <workItem from="1581168830422" duration="909000" />
-      <workItem from="1581189366466" duration="4199000" />
+      <workItem from="1581189366466" duration="5863000" />
+      <workItem from="1582367194158" duration="4000" />
+      <workItem from="1582372486261" duration="627000" />
+      <workItem from="1582373128903" duration="47000" />
+      <workItem from="1582373191732" duration="36000" />
+      <workItem from="1582373241884" duration="3369000" />
     </task>
     <servers />
   </component>
@@ -88,18 +91,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="42" y="190" key="#Inspections/0.0.1920.1050@0.0.1920.1050" timestamp="1581190257558" />
+    <state x="236" y="368" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1582373196204">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="236" y="368" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1920.1050@0.0.1920.1050" timestamp="1582373196204" />
     <state x="568" y="350" width="440" height="477" key="FileChooserDialogImpl" timestamp="1581193189564">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="568" y="350" width="440" height="477" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1581193189564" />
-    <state x="14" y="178" key="SettingsEditor" timestamp="1581190309800">
+    <state x="-3" y="165" key="SettingsEditor" timestamp="1582374484653">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="14" y="178" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1581190309800" />
-    <state x="164" y="126" width="606" height="804" key="find.popup" timestamp="1581193120664">
+    <state x="-3" y="165" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1582374484653" />
+    <state x="217" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582374406463">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="164" y="126" width="606" height="804" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1581193120664" />
+    <state x="217" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1582374406463" />
+    <state x="164" y="126" width="606" height="804" key="find.popup" timestamp="1582375326330">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="164" y="126" width="606" height="804" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1582375326330" />
     <state x="123" y="247" key="run.anything.popup" timestamp="1581191620093">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
