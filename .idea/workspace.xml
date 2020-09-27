@@ -12,8 +12,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -92,7 +92,7 @@
       <workItem from="1593357267562" duration="3739000" />
       <workItem from="1593551845337" duration="1211000" />
       <workItem from="1593641663761" duration="563000" />
-      <workItem from="1601236726037" duration="599000" />
+      <workItem from="1601236726037" duration="1476000" />
     </task>
     <servers />
   </component>
@@ -100,10 +100,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1590437364829">
+    <state x="221" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601238616937">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590437364829" />
+    <state x="221" y="332" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1601238616937" />
     <state x="164" y="126" width="606" height="804" key="find.popup" timestamp="1593357575176">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
