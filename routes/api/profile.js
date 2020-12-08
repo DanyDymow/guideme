@@ -218,8 +218,7 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
             .map(item => item.id)
             .indexOf(req.params.exp_id);
 
-        if (removeIndex !== -1)
-        {
+        if (removeIndex !== -1) {
             profile.experience.splice(removeIndex, 1);
         }
 
@@ -294,8 +293,7 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
             .map(item => item.id)
             .indexOf(req.params.edu_id);
 
-        if (removeIndex !== -1)
-        {
+        if (removeIndex !== -1) {
             profile.education.splice(removeIndex, 1);
         }
 

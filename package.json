@@ -22,7 +22,7 @@
     "request": "^2.88.0"
   },
   "description": "Trip shop",
-  "main": "sever.js",
+  "main": "server.js",
   "devDependencies": {
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"

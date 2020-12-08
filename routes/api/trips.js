@@ -3,20 +3,30 @@ const router = express.Router();
 const {check, validationResult} = require('express-validator');
 const auth = require('../../middleware/auth');
 
-const Post = require('../../models/Post');
+const Trip = require('../../models/Trip');
 const User = require('../../models/User');
 
-// @route  POST api/posts
-// @desc   Create a post
+// @route  POST api/trips
+// @desc   Create a trip
 // @access Private
 router.post(
     '/',
     [
         auth,
         [
-            check('text', 'Text is required')
+            check('title', 'Title is required')
                 .not()
-                .isEmpty()
+                .isEmpty(),
+            check('description', 'Description is required')
+                .not()
+                .isEmpty(),
+            check('price', 'Price is required')
+                .not()
+                .isEmpty(),
+            check('photos', 'Photos is required')
+                .not()
+                .isEmpty(),
+
         ]
     ],
     async (req, res) => {
@@ -28,15 +38,18 @@ router.post(
         try {
             const user = await User.findById(req.user.id).select('-password');
 
-            const newPost = new Post({
-                text: req.body.text,
+            const newTrip = new Trip({
+                title: req.body.title,
                 name: user.name,
                 avatar: user.avatar,
-                user: req.user.id
+                user: req.user.id,
+                description: req.body.description,
+                price: req.body.price,
+                photos: req.body.photos
             });
 
-            const post = await newPost.save();
-            res.json(post);
+            const trip = await newTrip.save();
+            res.json(trip);
         } catch (err) {
             console.error(err.message);
             res.status(500).send('Server Error');
@@ -44,127 +57,127 @@ router.post(
     }
 );
 
-// @route  GET api/posts
-// @desc   Get all posts
+// @route  GET api/trips
+// @desc   Get all trips
 // @access Private
 router.get('/', auth, async (req, res) => {
     try {
-        const posts = await Post.find().sort({date: -1});
-        res.json(posts);
+        const trips = await Trip.find().sort({date: -1});
+        res.json(trips);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
     }
 });
 
-// @route  GET api/posts/:id
-// @desc   Get post by id
+// @route  GET api/trips/:id
+// @desc   Get trip by id
 // @access Private
 router.get('/:id', auth, async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
+        const trip = await Trip.findById(req.params.id);
 
-        if (!post) {
+        if (!trip) {
             return res.status(404).json({msg: 'Post not found'});
         }
 
-        res.json(post);
+        res.json(trip);
     } catch (err) {
         console.error(err.message);
         if (err.kind === 'ObjectId') {
-            return res.status(404).json({msg: 'Post not found'});
+            return res.status(404).json({msg: 'Trip not found'});
         }
         res.status(500).send('Server Error');
     }
 });
 
-// @route  DELETE api/posts/:id
-// @desc   Delete a post by id
+// @route  DELETE api/trips/:id
+// @desc   Delete a trip by id
 // @access Private
 router.delete('/:id', auth, async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
+        const trip = await Trip.findById(req.params.id);
 
         //Check if post exist
-        if (!post) {
-            return res.status(404).json({msg: 'Post not found'});
+        if (!trip) {
+            return res.status(404).json({msg: 'Trip not found'});
         }
 
         //Check user
-        if (post.user.toString() !== req.user.id) {
+        if (trip.user.toString() !== req.user.id) {
             return res.status(401).json({msg: 'User not authorized'});
         }
 
-        await post.remove();
+        await trip.remove();
 
-        res.json({msg: 'Post removed'});
+        res.json({msg: 'Trip removed'});
     } catch (err) {
         console.error(err.message);
-        //Even if postId is not valid
+        //Even if tripId is not valid
         if (err.kind === 'ObjectId') {
-            return res.status(404).json({msg: 'Post not found'});
+            return res.status(404).json({msg: 'Trip not found'});
         }
         res.status(500).send('Server Error');
     }
 });
 
-// @route  PUT api/posts/like/:id
-// @desc   Like a post
+// @route  PUT api/trips/like/:id
+// @desc   Like a trip
 // @access Private
 router.put('/like/:id', auth, async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
+        const trip = await Trip.findById(req.params.id);
 
-        //Check if the post has already been liked
-        if (post.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
+        //Check if the trip has already been liked
+        if (trip.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
             return res.status(400).json({msg: 'Post already liked'});
         }
 
-        post.likes.unshift({user: req.user.id});
+        trip.likes.unshift({user: req.user.id});
 
-        await post.save();
+        await trip.save();
 
-        res.json(post.likes);
+        res.json(trip.likes);
     } catch (err) {
         console.error(err.message);
         if (err.kind === 'ObjectId') {
-            return res.status(404).json({msg: 'Post not found'});
+            return res.status(404).json({msg: 'Trip not found'});
         }
         res.status(500).send('Server Error');
     }
 });
 
-// @route  PUT api/posts/unlike/:id
-// @desc   Like a post
+// @route  PUT api/trips/unlike/:id
+// @desc   Unlike a trip
 // @access Private
 router.put('/unlike/:id', auth, async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
+        const trip = await Trip.findById(req.params.id);
 
         //Check if the post has already been liked
-        if (post.likes.filter(like => like.user.toString() === req.user.id).length === 0) {
-            return res.status(400).json({msg: 'Post has not yet been liked'});
+        if (trip.likes.filter(like => like.user.toString() === req.user.id).length === 0) {
+            return res.status(400).json({msg: 'Trip has not yet been liked'});
         }
 
         //Get remove index
-        const removeIndex = post.likes.map(like => like.user.toString()).indexOf(req.user.id);
+        const removeIndex = trip.likes.map(like => like.user.toString()).indexOf(req.user.id);
 
-        post.likes.splice(removeIndex, 1);
+        trip.likes.splice(removeIndex, 1);
 
-        await post.save();
+        await trip.save();
 
-        res.json(post.likes);
+        res.json(trip.likes);
     } catch (err) {
         console.error(err.message);
         if (err.kind === 'ObjectId') {
-            return res.status(404).json({msg: 'Post not found'});
+            return res.status(404).json({msg: 'Trip not found'});
         }
         res.status(500).send('Server Error');
     }
 });
 
-// @route  POST api/posts/comment/:id
-// @desc   Comment on a post
+// @route  POST api/trips/comment/:id
+// @desc   Comment on a trip
 // @access Private
 router.post(
     '/comment/:id',
@@ -184,7 +197,7 @@ router.post(
 
         try {
             const user = await User.findById(req.user.id).select('-password');
-            const post = await Post.findById(req.params.id);
+            const trip = await Trip.findById(req.params.id);
 
             const newComment = {
                 text: req.body.text,
@@ -193,11 +206,11 @@ router.post(
                 user: req.user.id
             };
 
-            post.comments.unshift(newComment);
+            trip.comments.unshift(newComment);
 
-            await post.save();
+            await trip.save();
 
-            res.json(post.comments);
+            res.json(trip.comments);
         } catch (err) {
             console.error(err.message);
             res.status(500).send('Server Error');
@@ -205,15 +218,15 @@ router.post(
     }
 );
 
-// @route  DELETE api/posts/comment/:id/:comment_id
-// @desc   Delete comment from a post
+// @route  DELETE api/trips/comment/:id/:comment_id
+// @desc   Delete comment from a trip
 // @access Private
 router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
+        const trip = await Trip.findById(req.params.id);
 
         //Pull out comment
-        const comment = post.comments.find(comment => comment.id === req.params.comment_id);
+        const comment = trip.comments.find(comment => comment.id === req.params.comment_id);
 
         //Make sure comment exists
         if (!comment) {
@@ -226,15 +239,15 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
         }
 
         //Get remove index
-        const removeIndex = post.comments
+        const removeIndex = trip.comments
             .map(comment => comment.user.toString())
             .indexOf(req.user.id);
 
-        post.comments.splice(removeIndex, 1);
+        trip.comments.splice(removeIndex, 1);
 
-        await post.save();
+        await trip.save();
 
-        res.json(post.comments);
+        res.json(trip.comments);
 
     } catch (err) {
         console.error(err.message);
